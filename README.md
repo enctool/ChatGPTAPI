@@ -48,19 +48,19 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
 |پرسش|String - اجباری|text|
 |آرایه ای از عملیات اضافی|String - اجباری|works|
 
- - api
+ -ا api
 	 - برای دریافت api به ربات https://t.me/ChatGPT_source_bot تلگرامی  مراجعه کنید
- - callback
+ -ا callback
 	 - زمانیکه پاسخ پرسش شما توسط ChatGPT آماده شد, پاسخ به این آدرس ارسال میشود
- - which
+ -ا which
 	 - تعیین نوع پرسش که در این حالت باید برابر (text) باشد
- - mode
+ -ا mode
 	 - میتونید حالت پاسخگویی ربات رو به موارد زیر تغییر دهید (مثلا در حالت ناراحتی و یا برنامه نویسی پاسخ بده)
 	 - برای دریافت پاسخ عادی و قابل اطمینان مقدار mode رو خالی بگذارید
 	 - در mode=chat: ربات مثله یک انسان پاسخ میدهد
 	 - انواع مدها: comedy ,upset ,depress ,love ,poem ,shy ,coward ,impolite ,rough ,programmer ,chat
- - text
+ -ا text
 	 - متن پرسش خود رو بنویسید
- - works
+ -ا works
 	 - اگه میخواهید پاسخ ارسال شده از سمت ChatGPT بصورت voice باشد کافیه یک آرایه بسازید و عبارت (txtTOvoice) رو در آن قرار دهید
 
