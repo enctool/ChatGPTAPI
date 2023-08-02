@@ -40,7 +40,8 @@ A strong api for communication with chatgpt and all kinds of artificial intellig
 https://polha.ir/chatgpt_api/chatgpt_api.php
 | شرح | نوع | نام |
 |    :---:     |     :---:      |     :---:     |
-| git status   | String - اجباری|api|
+|کد اختصاصی شما
+o	برای دریافت api به ربات https://t.me/ChatGPT_source_bot تلگرامی  مراجعه کنید| String - اجباری|api|
 | git diff     | String - اجباری|callback|
 | git diff     |String - اجباری|which|
 | git diff     |String - اجباری|mode|
