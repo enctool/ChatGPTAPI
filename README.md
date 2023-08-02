@@ -63,7 +63,7 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
  - توضیح text
 	 - متن پرسش خود رو بنویسید
  - توضیح works
-	 - اگه میخواهید پاسخ ارسال شده از سمت ChatGPT بصورت voice باشد کافیه یک آرایه بسازید و عبارت (txtTOvoice) رو در آن قرار دهید
+	 - اگه میخواهید پاسخ ارسال شده از سمت ChatGPT بصورت voice باشد کافیه یک آرایه بسازید و عبارت (txtTOvoice) رو در آن قرار دهید, در غیراینصورت این مقدار را خالی بگذارید
 
  ```php
 $parameters = [
@@ -71,6 +71,7 @@ $parameters = [
 		"callback" => 'https://example.ir/chatgpt_callback_url.php',
 		"which"    => 'text',
 		"text"     => 'سلام خوبی؟',
+		"works"    => json_encode(['txtTOvoice'] ,JSON_UNESCAPED_UNICODE),
 		];
 $options = array(
 		CURLOPT_URL => 'https://polha.ir/chatgpt_api/chatgpt_api.php',
