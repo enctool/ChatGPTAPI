@@ -36,9 +36,8 @@ A strong api for communication with chatgpt and all kinds of artificial intellig
 🟡 ***راهنما اتصال***
 
 در ***مرحله  اول*** شما می بایست پارامترهای موجود در جدول زیر رو با متد POST به آدرسی که مشخص شده ارسال کنید(به نوع داده ها و نام فیلد توجه کنید)
-```markdown
 | Left-aligned | Center-aligned | Right-aligned |
 | :---         |     :---:      |          ---: |
 | git status   | git status     | git status    |
 | git diff     | git diff       | git diff      |
-```
+
