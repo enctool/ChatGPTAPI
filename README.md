@@ -91,10 +91,10 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
  ```php
 $parameters = [
 	"api"      => "********************",
-   	"callback" => 'https://example.ir/chatgpt_callback_url.php',
-   	"which"    => 'text',
-   	"text"     => 'سلام خوبی؟',
-   	"works"    => json_encode(['txtTOvoice'] ,JSON_UNESCAPED_UNICODE),
+	"callback" => 'https://example.ir/chatgpt_callback_url.php',
+	"which"    => 'text',
+	"text"     => 'سلام خوبی؟',
+	"works"    => json_encode(['txtTOvoice'] ,JSON_UNESCAPED_UNICODE),
    	];
 $options = array(
 	CURLOPT_URL => 'https://polha.ir/chatgpt_api/chatgpt_api.php',
