@@ -40,10 +40,10 @@ A strong api for communication with chatgpt and all kinds of artificial intellig
 https://polha.ir/chatgpt_api/chatgpt_api.php
 | شرح | نوع | نام |
 |    :---:     |     :---:      |     :---:     |
-| git status   | git status     | api    |
-| git diff     | git diff       | callback      |
-| git diff     | git diff       | which      |
-| git diff     | git diff       | mode      |
-| git diff     | git diff       | text      |
-| git diff     | git diff       | works      |
+| git status   | String - اجباری|api|
+| git diff     | String - اجباری|callback|
+| git diff     |String - اجباری|which|
+| git diff     |String - اجباری|mode|
+| git diff     |String - اجباری|text|
+| git diff     |String - اجباری|works|
 
