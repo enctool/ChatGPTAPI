@@ -68,7 +68,7 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
  زمانیکه درخواست بالا را ارسال کردید, در پاسخ json زیر را دریافت خواهید کرد
 
  ```php
-// نمونه کد ارسال درخواست پاسخ متنی
+// example: نمونه کد ارسال درخواست پاسخ متنی
 $parameters = [
 		"api"      => "zxPSIsImQyIjobfbdiZkTdfvdf0esdcsZ4UzlQbHVY",
 		"callback" => 'https://example.ir/chatgpt_callback_url.php',
