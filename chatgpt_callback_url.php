@@ -17,7 +17,7 @@ $get_status = trim($get_parameters['status']);
 $get_code   = trim($get_parameters['code']);
 $get_detail = trim($get_parameters['detail']);
 $get_text   = trim($get_parameters['text']);
-$get_files  = json_decode(trim($get_parameters['files']),1);
+$get_files  = $get_parameters['files'];
 
 if($get_id == '' || $get_status == ''){
 	return;
