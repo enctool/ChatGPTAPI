@@ -36,9 +36,14 @@ A strong api for communication with chatgpt and all kinds of artificial intellig
 🟡 ***راهنما اتصال***
 
 در ***مرحله  اول*** شما می بایست پارامترهای موجود در جدول زیر رو با متد POST به آدرسی که مشخص شده ارسال کنید(به نوع داده ها و نام فیلد توجه کنید)
+
 https://polha.ir/chatgpt_api/chatgpt_api.php
-| نام | نوع | شرح |
+| شرح | نوع | نام |
 |    :---:     |     :---:      |     :---:     |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
+| git status   | git status     | api    |
+| git diff     | git diff       | callback      |
+| git diff     | git diff       | which      |
+| git diff     | git diff       | mode      |
+| git diff     | git diff       | text      |
+| git diff     | git diff       | works      |
 
