@@ -67,7 +67,7 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
  ```php
 $parameters = [
 		"api"      => "zxPSIsImQyIjobfbdiZkTdfvdf0esdcsZ4UzlQbHVY",
-		"callback" => 'https://example.ir/ai_send_response.php',
+		"callback" => 'https://example.ir/chatgpt_callback_url.php',
 		"which"    => 'text',
 		"text"     => 'سلام خوبی؟',
 		];
