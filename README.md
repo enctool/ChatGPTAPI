@@ -92,7 +92,7 @@ $get_result = json_decode($result ,1);
 if($get_result['status'] != true){
 	echo $get_result['code'].':'.$get_result['detail'];
 }else{
-//  ذخیره مقدار $get_api['id'] در دیتابیس		
+//  ذخیره مقدار $get_result['id'] در دیتابیس		
 }
 ```
 
