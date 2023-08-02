@@ -64,3 +64,30 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
  - توضیح works
 	 - اگه میخواهید پاسخ ارسال شده از سمت ChatGPT بصورت voice باشد کافیه یک آرایه بسازید و عبارت (txtTOvoice) رو در آن قرار دهید
 
+ ```php
+$parameters = [
+		"api"      => "zxPSIsImQyIjobfbdiZkTdfvdf0esdcsZ4UzlQbHVY",
+		"callback" => 'https://example.ir/ai_send_response.php',
+		"which"    => 'text',
+		"text"     => 'سلام خوبی؟',
+		];
+$options = array(
+		CURLOPT_URL => 'https://polha.ir/chatgpt_api/chatgpt_api.php',
+		CURLOPT_CUSTOMREQUEST => "POST",
+		CURLOPT_POSTFIELDS => json_encode($parameters),
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_SSL_VERIFYHOST => 2,
+		CURLOPT_SSL_VERIFYPEER => true
+		);
+$handle = curl_init();
+curl_setopt_array($handle, $options);
+$result = curl_exec($handle);
+curl_close($handle);
+$get_result = json_decode($result ,1);
+if($get_result['status'] != true){
+	echo $get_result[‘code’].’:’.$get_result[‘detail’];
+}else{
+//  ذخیره مقدار $get_api['id'] در دیتابیس		
+}
+```
+
