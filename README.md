@@ -48,7 +48,7 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
 |پرسش|String - اجباری|text|
 |آرایه ای از عملیات اضافی|String - اجباری|works|
 
- -ا api
+ - اapi
 	 - برای دریافت api به ربات https://t.me/ChatGPT_source_bot تلگرامی  مراجعه کنید
  -ا callback
 	 - زمانیکه پاسخ پرسش شما توسط ChatGPT آماده شد, پاسخ به این آدرس ارسال میشود
