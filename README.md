@@ -39,7 +39,7 @@ A strong api for communication with chatgpt and all kinds of artificial intellig
 در ***`مرحله اول`*** شما می بایست پارامترهای موجود در جدول زیر رو با متد POST به آدرسی که مشخص شده ارسال کنید
 
 https://polha.ir/chatgpt_api/chatgpt_api.php
-| شرح | نوع | نام |
+| شرح | نوع | پارامتر |
 |    :---:     |     :---:      |     :---:     |
 |کد اختصاصی شما| String - اجباری|api|
 |صفحه ای که پاسخ ها به آنجا ارسال میشوند| String - اجباری|callback|
@@ -48,19 +48,19 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
 |پرسش|String - اجباری|text|
 |آرایه ای از عملیات اضافی|String - اجباری|works|
 
- - اapi
+ - توضیح api
 	 - برای دریافت api به ربات https://t.me/ChatGPT_source_bot تلگرامی  مراجعه کنید
- -ا callback
+ - توضیح callback
 	 - زمانیکه پاسخ پرسش شما توسط ChatGPT آماده شد, پاسخ به این آدرس ارسال میشود
- -ا which
+ - توضیح which
 	 - تعیین نوع پرسش که در این حالت باید برابر (text) باشد
- -ا mode
+ - توضیح mode
 	 - میتونید حالت پاسخگویی ربات رو به موارد زیر تغییر دهید (مثلا در حالت ناراحتی و یا برنامه نویسی پاسخ بده)
 	 - برای دریافت پاسخ عادی و قابل اطمینان مقدار mode رو خالی بگذارید
 	 - در mode=chat: ربات مثله یک انسان پاسخ میدهد
 	 - انواع مدها: comedy ,upset ,depress ,love ,poem ,shy ,coward ,impolite ,rough ,programmer ,chat
- -ا text
+ - توضیح text
 	 - متن پرسش خود رو بنویسید
- -ا works
+ - توضیح works
 	 - اگه میخواهید پاسخ ارسال شده از سمت ChatGPT بصورت voice باشد کافیه یک آرایه بسازید و عبارت (txtTOvoice) رو در آن قرار دهید
 
