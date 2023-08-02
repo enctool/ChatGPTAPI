@@ -65,7 +65,10 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
  - توضیح works
 	 - اگه میخواهید پاسخ ارسال شده از سمت ChatGPT بصورت voice باشد کافیه یک آرایه بسازید و عبارت (txtTOvoice) رو در آن قرار دهید, در غیراینصورت این مقدار را خالی بگذارید
 
+ زمانیکه درخواست بالا را ارسال کردید, در پاسخ json زیر را دریافت خواهید کرد
+
  ```php
+// نمونه کد ارسال درخواست پاسخ متنی
 $parameters = [
 		"api"      => "zxPSIsImQyIjobfbdiZkTdfvdf0esdcsZ4UzlQbHVY",
 		"callback" => 'https://example.ir/chatgpt_callback_url.php',
