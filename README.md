@@ -89,7 +89,8 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
 
 نمونه کد ارسال درخواست پاسخ متنی
  ```php
-$parameters = [   	"api"      => "********************",
+$parameters = [
+	"api"      => "********************",
    	"callback" => 'https://example.ir/chatgpt_callback_url.php',
    	"which"    => 'text',
    	"text"     => 'سلام خوبی؟',
@@ -110,9 +111,9 @@ $status = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 curl_close($handle);
 $get_result = json_decode($result ,1);
 if($get_result['status'] != true){
-   echo $get_result['code'].':'.$get_result['detail'];
+	echo $get_result['code'].':'.$get_result['detail'];
 }else{
-//  ذخیره مقدار $get_result['id'] در دیتابیس		
+	//  ذخیره مقدار $get_result['id'] در دیتابیس
 }
 ```
 
