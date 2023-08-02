@@ -69,28 +69,31 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
 
  ```php
 // example: نمونه کد ارسال درخواست پاسخ متنی
+<?php
+// example: نمونه کد ارسال درخواست پاسخ متنی
 $parameters = [
-		"api"      => "zxPSIsImQyIjobfbdiZkTdfvdf0esdcsZ4UzlQbHVY",
-		"callback" => 'https://example.ir/chatgpt_callback_url.php',
-		"which"    => 'text',
-		"text"     => 'سلام خوبی؟',
-		"works"    => json_encode(['txtTOvoice'] ,JSON_UNESCAPED_UNICODE),
-		];
+   	"api"      => "********************",
+   	"callback" => 'https://example.ir/chatgpt_callback_url.php',
+   	"which"    => 'text',
+   	"text"     => 'سلام خوبی؟',
+   	"works"    => json_encode(['txtTOvoice'] ,JSON_UNESCAPED_UNICODE),
+   	];
 $options = array(
-		CURLOPT_URL => 'https://polha.ir/chatgpt_api/chatgpt_api.php',
-		CURLOPT_CUSTOMREQUEST => "POST",
-		CURLOPT_POSTFIELDS => json_encode($parameters),
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_SSL_VERIFYHOST => 2,
-		CURLOPT_SSL_VERIFYPEER => true
-		);
+	CURLOPT_URL => 'https://polha.ir/chatgpt_api/chatgpt_api.php',
+	CURLOPT_CUSTOMREQUEST => "POST",
+	CURLOPT_POSTFIELDS => $parameters,
+	CURLOPT_RETURNTRANSFER => true ,
+	CURLOPT_SSL_VERIFYHOST => 2, //for ssl
+	CURLOPT_SSL_VERIFYPEER => true //for ssl
+);
 $handle = curl_init();
 curl_setopt_array($handle, $options);
 $result = curl_exec($handle);
+$status = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 curl_close($handle);
 $get_result = json_decode($result ,1);
 if($get_result['status'] != true){
-	echo $get_result['code'].':'.$get_result['detail'];
+   echo $get_result['code'].':'.$get_result['detail'];
 }else{
 //  ذخیره مقدار $get_result['id'] در دیتابیس		
 }
