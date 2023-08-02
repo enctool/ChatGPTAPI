@@ -1,3 +1,4 @@
+
 # ChatGPTAPI
 A strong api for communication with chatgpt and all kinds of artificial intelligence systems such as photo production, text to voice and...
 # این api چیکار میکنه؟
@@ -15,5 +16,8 @@ A strong api for communication with chatgpt and all kinds of artificial intellig
  - قابلیت ارسال پاسخ های ChatGPT بصورت صدا (ویس)
  - ✅**تمامی امکانات نامحدود هستند**
 
+# نحوه استفاده
 
-
+شما میتوانید طبق مستندات زیر به راحتی به این api متصل بشید و سیستم خودتون (اپ گوشی,وبسایت,ربات تلگرام,سیسام های iot,دستگاه های هوشمند و...) به این api متصل کنید
+همچنین کد یک ربات تلگرام متصل به این api رو واستون قرار دادیم که با مطالعه pdf زیر میتونید در کمتر از 5 دقیقه یک ربات تلگرامی متصل به ChatGPT بسازید!!
+👉 https://github.com/enctool/ChatGPTAPI/blob/main/help.pdf
