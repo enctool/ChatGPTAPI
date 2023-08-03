@@ -264,3 +264,107 @@ if($get_result['status'] != true){
   "token": 3
 }
 ```
+
+## راهنما درخواست تبدیل متن به ویس
+
+در ***`مرحله اول`*** شما می بایست پارامترهای موجود در جدول زیر رو با متد POST به آدرسی که مشخص شده ارسال کنید
+
+https://polha.ir/chatgpt_api/chatgpt_api.php
+| شرح | نوع | پارامتر |
+|    :---:     |     :---:      |     :---:     |
+|کد اختصاصی شما| String - اجباری|api|
+|صفحه ای که پاسخ ها به آنجا ارسال میشوند| String - اجباری|callback|
+|txtTOvoice|String - اجباری|which|
+|تعیین زبان|String - اختیاری|txtTOvoice_lang|
+|تعیین صدای خواننده|String - اختیاری|txtTOvoice_who|
+|فرمت خروجی|String - اختیاری|txtTOvoice_format|
+|سرعت خواندن|String - اختیاری|txtTOvoice_speed|
+|کشش صدا|String - اختیاری|txtTOvoice_pitch|
+
+ - توضیح which:
+	 - تعیین نوع پرسش که در این حالت باید برابر (txtTOvoice) باشد
+ - توضیح txtTOvoice_format:
+	 - میتوانید فرمت خروجی رو تعیین کنید
+	 - انواع فرمت ها: mp3
+ - توضیح txtTOvoice_speed:
+	 - سرعت خواندن رو میتوانید تعیین کنید که عددی در بازه -100 تا 200 میتوانید اتخاب کنید. حالت عادی روی عدد 0 هست
+ - توضیح txtTOvoice_pitch:
+	 - میتواید میزان کشش صدا (pitch) رو تعیین کنید که عددی در بازه -50 تا 50 میتوانید اتخاب کنید. حالت عادی روی عدد 0 هست
+ - برای تعیین txtTOvoice_lang,txtTOvoice_who به pdf زیر مراجعه کنید:
+	 - همچنین میتوانید txtTOvoice_lang,txtTOvoice_who روی حالت auto قرار دهید تا بضورت خودکار ست شود
+	 - تتتتتتتت
+
+ زمانیکه درخواست بالا را ارسال کردید, در پاسخ json زیر را دریافت خواهید کرد
+
+ ```php
+{
+  "status": true,
+  "code": 100,
+  "detail": "Success",
+  "id": "11202",
+  "turn": 1
+}
+ ```
+
+نمونه کد ارسال درخواست متن به ویس
+ ```php
+$parameters = [
+	"api"               => "********************",
+	"callback"          => 'https://example.ir/chatgpt_callback_url.php',
+	"which"             => 'txtTOvoice',
+	"text"              => 'سلام دنیا',
+	"txtTOvoice_lang"   => "anime",
+	"txtTOvoice_who"    => "ddd"
+   	];
+$options = array(
+	CURLOPT_URL => 'https://polha.ir/chatgpt_api/chatgpt_api.php',
+	CURLOPT_CUSTOMREQUEST => "POST",
+	CURLOPT_POSTFIELDS => $parameters,
+	CURLOPT_RETURNTRANSFER => true ,
+	CURLOPT_SSL_VERIFYHOST => 2, //for ssl
+	CURLOPT_SSL_VERIFYPEER => true //for ssl
+);
+$handle = curl_init();
+curl_setopt_array($handle, $options);
+$result = curl_exec($handle);
+$status = curl_getinfo($handle, CURLINFO_HTTP_CODE);
+curl_close($handle);
+$get_result = json_decode($result ,1);
+if($get_result['status'] != true){
+	echo $get_result['code'].':'.$get_result['detail'];
+}else{
+	//  ذخیره مقدار $get_result['id'] در دیتابیس
+}
+```
+
+در ***`مرحله دوم`*** شما باید در فایلی که در فیلد callback یی که در (مرحله اول) تعیین کردید منتظر پاسخ ChatGPT باشید. (هر زمانکه پاسخ توسط ChatGPT آماده باشد, این پاسخ به فایل callback شما بصورت خودکار ارسال میشود). این پاسخ شامل موارد زیر هست
+
+| شرح | نوع | پارامتر |
+|    ---:     |     :---:      |     :---:     |
+|همان id هست که در مرحله اول به شما در پاسخ درخواستتان داده شد|Integer|id|
+|اگه درخواست شما موفقیت آمیز بوده باشه مقدارش true هست و درغیراینصورت برابر false خواهد بود|Boolean|status|
+|اگه درخواست شما موفقیت آمیز بوده باشه مقدارش 100 هست و درغیراینصورت یک عدد منفی خواهد بود (به لیست خطاها مراجعه کنید)|Integer|code|
+|اگه درخواست شما موفقیت آمیز بوده باشه مقدارش Success هست و درغیراینصورت متن خطا خواهد بود|String|detail|
+|متن پاسخ ارسال شده از سمت ChatGPT|String|text|
+|ليست آدرس url فايل هاي ارسال شده از سمت ChatGPT|JSON|files|
+|تعداد توكن مصرف شده براي ارسال اين پاسخ|Integer|token|
+
+نمونه پاسخ ارسال شده
+```php
+{
+  "id": 11204,
+  "status": 1,
+  "code": 100,
+  "detail": "Success",
+  "text": "",
+  "files": {
+    "txtTOimage": [
+      "https://polha.ir/chatgpt_api/files/RFeYeSmcxU1691079127.jpg",
+      "https://polha.ir/chatgpt_api/files/X5NRjvMGBI1691079128.jpg",
+      "https://polha.ir/chatgpt_api/files/FYxljWdwEv1691079129.jpg",
+      "https://polha.ir/chatgpt_api/files/NNlsHmB8pz1691079130.jpg"
+    ]
+  },
+  "token": 3
+}
+```
