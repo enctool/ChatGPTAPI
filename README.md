@@ -294,7 +294,7 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
  - توضیح txtTOvoice_pitch:
 	 - میتواید میزان کشش صدا (pitch) رو تعیین کنید که عددی در بازه -50 تا 50 میتوانید اتخاب کنید. حالت عادی روی عدد 0 هست
  - برای تعیین txtTOvoice_lang,txtTOvoice_who به pdf زیر مراجعه کنید:
-	 - همچنین میتوانید txtTOvoice_lang,txtTOvoice_who روی حالت auto قرار دهید تا بضورت خودکار ست شود
+	 - ***`همچنین میتوانید txtTOvoice_lang,txtTOvoice_who را روی حالت auto قرار دهید تا بصورت خودکار ست شود`***
 	 - تتتتتتتت
 
  زمانیکه درخواست بالا را ارسال کردید, در پاسخ json زیر را دریافت خواهید کرد
@@ -309,15 +309,15 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
 }
  ```
 
-نمونه کد ارسال درخواست متن به گفتار
+نمونه کد ارسال درخواست متن به گفتار (که زبان و... بصورت خودکار تشخیض داده میشه)
  ```php
 $parameters = [
 	"api"               => "********************",
 	"callback"          => 'https://example.ir/chatgpt_callback_url.php',
 	"which"             => 'txtTOvoice',
 	"text"              => 'سلام دنیا',
-	"txtTOvoice_lang"   => "anime",
-	"txtTOvoice_who"    => "ddd"
+	"txtTOvoice_lang"   => "auto",
+	"txtTOvoice_who"    => "auto"
    	];
 $options = array(
 	CURLOPT_URL => 'https://polha.ir/chatgpt_api/chatgpt_api.php',
