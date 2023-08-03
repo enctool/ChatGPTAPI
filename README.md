@@ -50,9 +50,9 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
 |کد اختصاصی شما| String - اجباری|api|
 |صفحه ای که پاسخ ها به آنجا ارسال میشوند| String - اجباری|callback|
 |text|String - اجباری|which|
-|حالت پرسش|String - اجباری|mode|
+|حالت پرسش|String - اختیاری|mode|
 |پرسش|String - اجباری|text|
-|آرایه ای از عملیات اضافی|String - اجباری|works|
+|آرایه ای از عملیات اضافی|String - اختیاری|works|
 
  - توضیح api:
    - برای دریافت api به ربات https://t.me/ChatGPT_source_bot تلگرامی  مراجعه کنید
@@ -173,10 +173,10 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
 |کد اختصاصی شما| String - اجباری|api|
 |صفحه ای که پاسخ ها به آنجا ارسال میشوند| String - اجباری|callback|
 |txtTOimage|String - اجباری|which|
-|حالت پرسش|String - اجباری|mode|
+|حالت پرسش|String - اختیاری|mode|
 |پرسش|String - اجباری|text|
-|تعداد عکس ها|String - اجباری|txtTOimage_count|
-|عبارات منفی پرسش|String - اجباری|txtTOimage_nPrompt|
+|تعداد عکس ها|String - اختیاری|txtTOimage_count|
+|عبارات منفی پرسش|String - اختیاری|txtTOimage_nPrompt|
 
  - توضیح which:
 	 - تعیین نوع پرسش که در این حالت باید برابر (txtTOimage) باشد
@@ -265,7 +265,7 @@ if($get_result['status'] != true){
 }
 ```
 
-## راهنما درخواست تبدیل متن به ویس
+## راهنما درخواست تبدیل متن به گفتار
 
 در ***`مرحله اول`*** شما می بایست پارامترهای موجود در جدول زیر رو با متد POST به آدرسی که مشخص شده ارسال کنید
 
@@ -275,6 +275,7 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
 |کد اختصاصی شما| String - اجباری|api|
 |صفحه ای که پاسخ ها به آنجا ارسال میشوند| String - اجباری|callback|
 |txtTOvoice|String - اجباری|which|
+|پرسش|String - اجباری|text|
 |تعیین زبان|String - اختیاری|txtTOvoice_lang|
 |تعیین صدای خواننده|String - اختیاری|txtTOvoice_who|
 |فرمت خروجی|String - اختیاری|txtTOvoice_format|
@@ -283,6 +284,8 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
 
  - توضیح which:
 	 - تعیین نوع پرسش که در این حالت باید برابر (txtTOvoice) باشد
+ - توضیح text:
+	 - متنی که میخواهید به گفتار تبدیل شود
  - توضیح txtTOvoice_format:
 	 - میتوانید فرمت خروجی رو تعیین کنید
 	 - انواع فرمت ها: mp3
@@ -306,7 +309,7 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
 }
  ```
 
-نمونه کد ارسال درخواست متن به ویس
+نمونه کد ارسال درخواست متن به گفتار
  ```php
 $parameters = [
 	"api"               => "********************",
