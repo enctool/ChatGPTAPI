@@ -295,7 +295,7 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
 	 - میتواید میزان کشش صدا (pitch) رو تعیین کنید که عددی در بازه -50 تا 50 میتوانید اتخاب کنید. حالت عادی روی عدد 0 هست
  - برای تعیین txtTOvoice_lang,txtTOvoice_who به pdf زیر مراجعه کنید:
 	 - ***`همچنین میتوانید txtTOvoice_lang,txtTOvoice_who را روی حالت auto قرار دهید تا بصورت خودکار ست شود`***
-	 - تتتتتتتت
+	 - https://github.com/enctool/ChatGPTAPI/blob/main/txtTOvoice_pdf.pdf
 
  زمانیکه درخواست بالا را ارسال کردید, در پاسخ json زیر را دریافت خواهید کرد
 
