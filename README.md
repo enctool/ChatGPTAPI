@@ -3,6 +3,16 @@
 
 # ChatGPTAPI
 A strong api for communication with chatgpt and all kinds of artificial intelligence systems such as photo production, text to voice and...
+ - [نوضیحات](https://github.com/enctool/ChatGPTAPI#%D8%A7%DB%8C%D9%86-api-%DA%86%DB%8C%DA%A9%D8%A7%D8%B1-%D9%85%DB%8C%DA%A9%D9%86%D9%87)
+ - [دریافت API CODE](https://github.com/enctool/ChatGPTAPI#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-api-code-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%AA%D8%B5%D8%A7%D9%84-%D8%A8%D9%87-%D8%A7%DB%8C%D9%86-api--%D9%BE%D8%B4%D8%AA%DB%8C%D8%A8%D8%A7%D9%86%DB%8C)
+ - [کد ربات تلگرامی متصل به این API](https://github.com/enctool/ChatGPTAPI#%D8%B3%D8%A7%D8%AE%D8%AA-%D8%B1%D8%A8%D8%A7%D8%AA-%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%DB%8C-%D9%85%D8%AA%D8%B5%D9%84-%D8%A8%D9%87-%D8%A7%DB%8C%D9%86-api)
+ - [درخواست پاسخ متنی](https://github.com/enctool/ChatGPTAPI#%D8%B1%D8%A7%D9%87%D9%86%D9%85%D8%A7-%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%85%D8%AA%D9%86%DB%8C)
+ - [درخواست تولید عکس](https://github.com/enctool/ChatGPTAPI#%D8%B1%D8%A7%D9%87%D9%86%D9%85%D8%A7-%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D8%B9%DA%A9%D8%B3)
+ - [درخواست تبدیل متن به گفتار](https://github.com/enctool/ChatGPTAPI#%D8%B1%D8%A7%D9%87%D9%86%D9%85%D8%A7-%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA-%D8%AA%D8%A8%D8%AF%DB%8C%D9%84-%D9%85%D8%AA%D9%86-%D8%A8%D9%87-%DA%AF%D9%81%D8%AA%D8%A7%D8%B1)
+ - [لیست محدودیت ها](https://github.com/enctool/ChatGPTAPI#%D9%84%DB%8C%D8%B3%D8%AA-%D9%85%D8%AD%D8%AF%D9%88%D8%AF%DB%8C%D8%AA-%D9%87%D8%A7)
+ - [لیست کد خطاها](https://github.com/enctool/ChatGPTAPI#%D9%84%DB%8C%D8%B3%D8%AA-%DA%A9%D8%AF-%D8%AE%D8%B7%D8%A7%D9%87%D8%A7)
+ - [نحوه محاسبه تعرفه توکن ها](https://github.com/enctool/ChatGPTAPI#%D9%86%D8%AD%D9%88%D9%87-%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D9%87-%D8%AA%D8%B9%D8%B1%D9%81%D9%87-%D8%AA%D9%88%DA%A9%D9%86-%D9%87%D8%A7)
+
 # این API چیکار میکنه؟
 شما بوسیله این API میتونید به انواع سیستم های هوش مصنوعی از جمله ChatGPT متصل شید!!
 
