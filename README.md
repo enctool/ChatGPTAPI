@@ -77,7 +77,7 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
   "status": true,
   "code": 100,
   "detail": "Success",
-  "id": "11106",
+  "id": "11115",
   "turn": "1"
 }
  ```
@@ -197,7 +197,7 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
   "status": true,
   "code": 100,
   "detail": "Success",
-  "id": "11202",
+  "id": "11200",
   "turn": 1
 }
  ```
@@ -248,7 +248,7 @@ if($get_result['status'] != true){
 نمونه پاسخ ارسال شده
 ```php
 {
-  "id": 11204,
+  "id": 11200,
   "status": 1,
   "code": 100,
   "detail": "Success",
@@ -355,17 +355,14 @@ if($get_result['status'] != true){
 نمونه پاسخ ارسال شده
 ```php
 {
-  "id": 11204,
+  "id": 11202,
   "status": 1,
   "code": 100,
   "detail": "Success",
-  "text": "",
+  "text": "سلام دنیا",
   "files": {
-    "txtTOimage": [
-      "https://polha.ir/chatgpt_api/files/RFeYeSmcxU1691079127.jpg",
-      "https://polha.ir/chatgpt_api/files/X5NRjvMGBI1691079128.jpg",
-      "https://polha.ir/chatgpt_api/files/FYxljWdwEv1691079129.jpg",
-      "https://polha.ir/chatgpt_api/files/NNlsHmB8pz1691079130.jpg"
+    "txtTOvoice": [
+      "https://polha.ir/chatgpt_api/files/uQBpkNytg71691081727.mp3"
     ]
   },
   "token": 3
