@@ -197,12 +197,12 @@ https://polha.ir/chatgpt_api/chatgpt_api.php
   "status": true,
   "code": 100,
   "detail": "Success",
-  "id": "11106",
-  "turn": "1"
+  "id": "11202",
+  "turn": 1
 }
  ```
 
-نمونه کد ارسال درخواست پاسخ متنی
+نمونه کد ارسال درخواست تولید عکس
  ```php
 $parameters = [
 	"api"               => "********************",
@@ -248,28 +248,19 @@ if($get_result['status'] != true){
 نمونه پاسخ ارسال شده
 ```php
 {
-  "id": 11115,
+  "id": 11204,
   "status": 1,
   "code": 100,
   "detail": "Success",
-  "text": "سلام! من یک هوش مصنوعی هستم، بنابراین نمی‌توانم احساس کنم. اما می‌توانم به سوالات شما پاسخ دهم. چگونه می‌توانم به شما کمک کنم؟",
-  "files": [],
-  "token": 1
-}
-```
-نمونه پاسخ ارسال شده درحالتیکه عبارت (txtTOvoice) در بخش works ست شده باشد
-```php
-{
-  "id": 11116,
-  "status": 1,
-  "code": 100,
-  "detail": "Success",
-  "text": "سلام! من یک هوش مصنوعی هستم، بنابراین نمی‌توانم احساس کنم. اما می‌توانم به شما کمک کنم. چگونه می‌توانم به شما کمک کنم؟",
+  "text": "",
   "files": {
-    "txtTOvoice": [
-      "https://polha.ir/chatgpt_api/files/tLrhJJzI211691015463.mp3"
+    "txtTOimage": [
+      "https://polha.ir/chatgpt_api/files/RFeYeSmcxU1691079127.jpg",
+      "https://polha.ir/chatgpt_api/files/X5NRjvMGBI1691079128.jpg",
+      "https://polha.ir/chatgpt_api/files/FYxljWdwEv1691079129.jpg",
+      "https://polha.ir/chatgpt_api/files/NNlsHmB8pz1691079130.jpg"
     ]
   },
-  "token": 4
+  "token": 3
 }
 ```
