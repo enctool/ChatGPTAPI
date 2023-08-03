@@ -20,6 +20,7 @@ A strong api for communication with chatgpt and all kinds of artificial intellig
 
 # پشتیبانی
 هر سوالی داشتید به پشتیبانی داخل ربات زیر پیام بدید
+
 👉 https://t.me/ChatGPT_source_bot
 
 # ساخت ربات تلگرامی متصل به این API
