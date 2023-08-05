@@ -19,7 +19,7 @@ $telegram = new Telegram(bot_api);
 //***** متصل شدن به دیتابیس
 $mydb = db_connect();
 if($mydb['status']==false){
-	send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"❌ متاسفانه خطایی رخ داد!\n لطفا مجددا بر روی /start کلیک کنید"]);
+	send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"❌ متاسفانه خطایی رخ داد!\n لطفا مجددا بر روی /start کلیک کنید\ni can not connect to the database"]);
 	return;
 }
 $mydb = $mydb['detail'];
@@ -27,7 +27,7 @@ $mydb = $mydb['detail'];
 //***** خواندن اطلاعات فرد از دیتابیس
 $user_db = db_findOne($mydb ,'users' ,"*" ,"user_id='".$telegram->UserID()."'");
 if($user_db['status']==false){
-	send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"❌ متاسفانه خطایی رخ داد!\n لطفا مجددا بر روی /start کلیک کنید"]);
+	send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"❌ متاسفانه خطایی رخ داد!\n لطفا مجددا بر روی /start کلیک کنید\nread user from database failed"]);
 	return;
 }
 $user_db = $user_db['detail'];
@@ -62,7 +62,7 @@ if($user_db == []){
 	);
 	$insert_result = db_insertOne($mydb ,'users' ,$user_db);
 	if($insert_result['status']==false){
-		send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"❌ متاسفانه خطایی رخ داد!\n لطفا مجددا بر روی /start کلیک کنید\n".$insert_result['detail']]);
+		send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"❌ متاسفانه خطایی رخ داد!\n لطفا مجددا بر روی /start کلیک کنید\ninsert new user failed: ".$insert_result['detail']]);
 		return;
 	}else{
 		send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"خوش اومدید!\n\n".$send_gift_true ,"parse_mode" => "html" ,"reply_markup" => json_encode(["inline_keyboard" => array(array(array("text"=>"🏠برگشت به منو🏠" ,"callback_data"=>"/start")))])]);
@@ -115,7 +115,8 @@ if((substr($telegram->Text() ,0 ,10) == "/start inv") || $telegram->Text()=="sta
 									   "💎 توکن مصرفی هر سوال متنی: ".token_left_text."\n".
 									   "💎 توکن مصرفی تولید هر عکس: ".token_left_image."\n".
 									   "💎 توکن مصرفی تولید هر ویس: ".token_left_voice."\n".
-									   "💎 <code>توکن های شما: ".$user_db['token']."</code>\n\n",
+									   "💎 <code>توکن های شما: ".$user_db['token']."</code>\n\n".
+									   "🥳 <b>برای دریافت سورس این ربات به @ChatGPT_source_bot بروید</b>",
 							  "parse_mode" => "html",
 							  "reply_markup" => json_encode(["inline_keyboard" => array(array(array("text"=>"تعیین حالت پاسخگویی" ,"callback_data"=>"/set_textMode")),
 																					    array(array("text"=>"💎برای افزایش توکن کلیک کنید💎" ,"callback_data"=>"/buy_token")),
@@ -370,7 +371,7 @@ else{
 	}
 	
 	//--- محدود کردن تعداد درخواست های کاربر
-	$max_question = (($which=='text')?5:3);
+	$max_question = (($which=='text')?10:5);
 	if(db_findOne($mydb ,'ai' ,"COUNT(id)" ,"user_id='".$telegram->UserID()."' AND which='".$which."'")['detail']['COUNT(id)'] >= $max_question){
 		send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"😢 شما $max_question تا سوال در صف انتظار داری!\nلطفا صبر کنید تا اونا رو اول واست جواب بدم\n".db_findOne($mydb ,'ai' ,"COUNT(id)" ,"user_id='".$telegram->UserID()."' AND which='".$which."'")['detail']['COUNT(id)'] ,'reply_to_message_id'=>$MessageID]);
 		return;
@@ -398,7 +399,7 @@ else{
 		}else
 		// محدودیت تعداد سوال؟
 		if($get_api['code'] == -6){
-			send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"❌ الان یکم سرم شلوغه!\nلطفا چند دقیقه بعد دوباره سوالتونو بفرستید" ,'reply_to_message_id'=>$MessageID]);
+			send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"❌ الان یکم سرم شلوغه!\nلطفا چند دقیقه بعد دوباره سوالتونو بفرستید\nکد خطا:-6" ,'reply_to_message_id'=>$MessageID]);
 			return;
 		}else{
 			send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"❌ متاسفانه خطایی رخ داد!\n لطفا مجددا سوال تون رو بفرستید\n\n".$get_api['code'].")".$get_api['detail'] ,'reply_to_message_id'=>$MessageID]);
@@ -415,7 +416,7 @@ else{
 		   ];
 	$insertDB = db_insertOne($mydb ,'ai' ,$doc);
 	if($insertDB['status']==false){
-		send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"❌ متاسفانه خطایی رخ داد!\n لطفا مجددا سوال تون رو بفرستید\n".$insertDB['detail'] ,'reply_to_message_id'=>$MessageID]);
+		send_tel("sendMessage" ,['chat_id'=>$telegram->ChatID() ,'text'=>"❌ متاسفانه خطایی رخ داد!\n لطفا مجددا سوال تون رو بفرستید\ninsert new ai question failed: ".$insertDB['detail'] ,'reply_to_message_id'=>$MessageID]);
 		return;
 	}
 	
