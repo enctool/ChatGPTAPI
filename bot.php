@@ -115,7 +115,7 @@ if((substr($telegram->Text() ,0 ,10) == "/start inv") || $telegram->Text()=="sta
 									   "💎 توکن مصرفی هر سوال متنی: ".token_left_text."\n".
 									   "💎 توکن مصرفی تولید هر عکس: ".token_left_image."\n".
 									   "💎 توکن مصرفی تولید هر ویس: ".token_left_voice."\n".
-									   "💎 <code>توکن های شما: ".$user_db['token']."</code>\n\n"
+									   "💎 <code>توکن های شما: ".$user_db['token']."</code>\n\n",
 							  "parse_mode" => "html",
 							  "reply_markup" => json_encode(["inline_keyboard" => array(array(array("text"=>"تعیین حالت پاسخگویی" ,"callback_data"=>"/set_textMode")),
 																					    array(array("text"=>"💎برای افزایش توکن کلیک کنید💎" ,"callback_data"=>"/buy_token")),
