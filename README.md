@@ -49,6 +49,7 @@ A strong api for communication with chatgpt and all kinds of artificial intellig
 # ساخت ربات تلگرامی متصل به این API
 
 در اینجا کد یک ربات تلگرام متصل به این API رو واستون قرار دادیم که با مطالعه pdf زیر میتونید در کمتر از 5 دقیقه یک ربات تلگرامی متصل به ChatGPT بسازید!!
+این ربات با نسخه php7.4 نوشته شده
 
 👉 https://github.com/enctool/ChatGPTAPI/blob/main/help_build_botTelegram.pdf
 
